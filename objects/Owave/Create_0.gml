@@ -7,11 +7,11 @@ messageDisplayed=false
 waveCountdown = 0;
 waitingForNextWave = false;
 showPrompt = false;
+//variables globales
+global.enemy_min_speed = 0.5;
+global.enemy_max_speed = 1.5;
+global.enemy_life = 2;
 
-
-
-
-//startnewWave()
 
 
 function startnewWave(){
@@ -81,12 +81,12 @@ function applyRandomEffect() {
                 show_message("Your attack power has been halved!");
                 break;
             case "enemy_life_up":
-                OEnemy.healthLife += 1;
+				global.enemy_life += 1;
                 show_message("Enemies have more health!");
                 break;
             case "enemy_speed_up":
-                OEnemy.minimumSpeed += 0.5;
-                OEnemy.maximumSpeed += 0.5;
+               global.enemy_min_speed += 0.5;
+               global.enemy_max_speed += 0.5;
                 show_message("Enemies move faster!");
                 break;
         }
