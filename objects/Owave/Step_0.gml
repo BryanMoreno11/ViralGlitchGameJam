@@ -19,7 +19,7 @@ if (waitingForNextWave) {
 }
 
 if (enemiesAlive <= 0 && currentWave == maxWaves && !messageDisplayed) {
-    show_message("¡Felicidades!");
+    show_message("¡Congratulations!");
 	game_restart()
     messageDisplayed = true;
 }

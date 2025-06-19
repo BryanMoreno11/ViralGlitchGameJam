@@ -35,59 +35,59 @@ instance_create_layer(positionX, positionY, "Instances", OEnemy)
 function applyRandomEffect() {
     var possibleEffects = [];
 
-    // Reglas de mejora/disminución de velocidad del jugador
+    // Player speed rules
     if (Oplayer.spd > 0.5) array_push(possibleEffects, "player_spd_down");
     if (Oplayer.spd < 10) array_push(possibleEffects, "player_spd_up");
 
-    // Reglas de cooldown (tiempo entre disparos)
+    // Player cooldown rules
     if (Oplayer.coolDownValue > 5) array_push(possibleEffects, "cooldown_down");
     if (Oplayer.coolDownValue < 60) array_push(possibleEffects, "cooldown_up");
 
-    // Reglas de ataque
-	if (Oplayer.attackValue > 1) array_push(possibleEffects, "attack_down");
+    // Player attack rules
+    if (Oplayer.attackValue > 1) array_push(possibleEffects, "attack_down");
     if (Oplayer.attackValue < 50) array_push(possibleEffects, "attack_up");
 
-    // Efectos enemigos (siempre se permiten)
+    // Enemy effects (always allowed)
     array_push(possibleEffects, "enemy_life_up");
-	array_push(possibleEffects, "enemy_speed_up");
+    array_push(possibleEffects, "enemy_speed_up");
 
-    // Elegir y aplicar efecto
+    // Choose and apply effect
     if (array_length(possibleEffects) > 0) {
-        var choice = possibleEffects[irandom_range(0,array_length(possibleEffects)-1)]
+        var choice = possibleEffects[irandom_range(0, array_length(possibleEffects) - 1)];
 
         switch (choice) {
             case "player_spd_up":
                 Oplayer.spd += 0.5;
-                show_message("¡Tu velocidad ha aumentado!");
+                show_message("Your speed has increased!");
                 break;
             case "player_spd_down":
                 Oplayer.spd -= 0.5;
-                show_message("¡Tu velocidad ha disminuido!");
+                show_message("Your speed has decreased!");
                 break;
             case "cooldown_up":
                 Oplayer.coolDownValue += 10;
-                show_message("¡Tus disparos son más lentos!");
+                show_message("Your shots are slower!");
                 break;
             case "cooldown_down":
                 Oplayer.coolDownValue = max(1, Oplayer.coolDownValue - 10);
-                show_message("¡Tus disparos son más rápidos!");
+                show_message("Your shots are faster!");
                 break;
             case "attack_up":
                 Oplayer.attackValue *= 2;
-                show_message("¡Tu poder de ataque se duplicó!");
+                show_message("Your attack power has doubled!");
                 break;
             case "attack_down":
                 Oplayer.attackValue = max(1, Oplayer.attackValue / 2);
-                show_message("¡Tu poder de ataque se redujo a la mitad!");
+                show_message("Your attack power has been halved!");
                 break;
             case "enemy_life_up":
                 OEnemy.healthLife += 1;
-                show_message("¡Los enemigos tienen más vida!");
+                show_message("Enemies have more health!");
                 break;
             case "enemy_speed_up":
                 OEnemy.minimumSpeed += 0.5;
                 OEnemy.maximumSpeed += 0.5;
-                show_message("¡Los enemigos se mueven más rápido!");
+                show_message("Enemies move faster!");
                 break;
         }
     }
