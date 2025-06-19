@@ -1,5 +1,6 @@
+
 direction= point_direction(x,y, Oplayer.x, Oplayer.y)
-speed= random_range(0.5, 1.5)
+speed= random_range(minimumSpeed, maximumSpeed)
 
 if(direction>90 && direction<270){
 image_xscale=1

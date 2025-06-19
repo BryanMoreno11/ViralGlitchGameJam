@@ -29,6 +29,9 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"dead","filters":[],"listItems":[],"multiselect":false,"name":"dead","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
     {"$GMObjectProperty":"v1","%Name":"isEnemy","filters":[],"listItems":[],"multiselect":false,"name":"isEnemy","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"healthLife","filters":[],"listItems":[],"multiselect":false,"name":"healthLife","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"2","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"maximumSpeed","filters":[],"listItems":[],"multiselect":false,"name":"maximumSpeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1.5","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"minimumSpeed","filters":[],"listItems":[],"multiselect":false,"name":"minimumSpeed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.5","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

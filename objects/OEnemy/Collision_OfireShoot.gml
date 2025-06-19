@@ -1,5 +1,9 @@
 if(!dead){
-dead=true
-instance_destroy(other)
-instance_destroy()
+	if(healthLife-Oplayer.attackValue<=0){
+		Owave.enemiesAlive--
+		dead=true
+		instance_destroy()
+	}
+	instance_destroy(other)
+	healthLife-=Oplayer.attackValue
 }
