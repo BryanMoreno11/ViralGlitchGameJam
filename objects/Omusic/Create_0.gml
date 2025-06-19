@@ -1,0 +1,1 @@
+bg_music=audio_play_sound(Mesmerizing_Galaxy_Loop, 10, true)

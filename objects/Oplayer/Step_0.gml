@@ -1,7 +1,10 @@
 xMove= keyboard_check(ord("D"))- keyboard_check(ord("A"))
 yMove= keyboard_check(ord("S")) - keyboard_check(ord("W"))
-x+=xMove * spd
-y+=yMove * spd
+if(!Owave.waitingForNextWave){
+	x+=xMove * spd
+	y+=yMove * spd
+}
+
 animation()
 shoot()
 invincibleTime()
@@ -51,6 +54,7 @@ function animation(){
 function shoot(){
 	coolDown--
 	if(coolDown<=0 && mouse_check_button(mb_left)){
+		audio_play_sound(ashoot,1,false)
 		coolDown= coolDownValue
 		with (instance_create_layer(x,y, "fireShoots", OfireShoot)){
 			angle= point_direction(x,y,mouse_x, mouse_y)

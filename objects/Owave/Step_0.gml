@@ -1,8 +1,25 @@
-var messageDisplayed=false
-if(enemiesAlive<=0 && currentWave< maxWaves){
-startnewWave()
-applyRandomEffect()
+if (enemiesAlive <= 0 && currentWave < maxWaves && !waitingForNextWave) {
+	Oplayer.x=32
+	Oplayer.y=320
+    waitingForNextWave = true;
+    waveCountdown = 180; // 3 segundos (si tu juego va a 60 FPS)
 }
-else if(enemiesAlive<=0 && currentWave==maxWaves &&  messageDisplayed==false){
-show_message("Congratulations!!!!")
+
+if (waitingForNextWave) {
+    waveCountdown--;
+
+    if (waveCountdown <= 0) {
+		
+        startnewWave();
+        if (currentWave > 1) {
+            applyRandomEffect();
+        }
+        waitingForNextWave = false;
+    }
+}
+
+if (enemiesAlive <= 0 && currentWave == maxWaves && !messageDisplayed) {
+    show_message("¡Felicidades!");
+	game_restart()
+    messageDisplayed = true;
 }

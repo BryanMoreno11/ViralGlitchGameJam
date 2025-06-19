@@ -2,12 +2,20 @@ currentWave=0
 enemiesPerWave=2
 enemiesToSpawn=0
 enemiesAlive=0
+messageDisplayed=false
+//Contador
+waveCountdown = 0;
+waitingForNextWave = false;
+showPrompt = false;
 
-startnewWave()
+
+
+
+//startnewWave()
 
 
 function startnewWave(){
-enemiesToSpawn= enemiesPerWave+ currentWave*2
+enemiesToSpawn= enemiesPerWave+ currentWave
 enemiesAlive= enemiesToSpawn
 currentWave++
 repeat(enemiesToSpawn){
@@ -57,11 +65,11 @@ function applyRandomEffect() {
                 show_message("¡Tu velocidad ha disminuido!");
                 break;
             case "cooldown_up":
-                Oplayer.coolDownValue += 5;
+                Oplayer.coolDownValue += 10;
                 show_message("¡Tus disparos son más lentos!");
                 break;
             case "cooldown_down":
-                Oplayer.coolDownValue = max(1, Oplayer.coolDownValue - 5);
+                Oplayer.coolDownValue = max(1, Oplayer.coolDownValue - 10);
                 show_message("¡Tus disparos son más rápidos!");
                 break;
             case "attack_up":

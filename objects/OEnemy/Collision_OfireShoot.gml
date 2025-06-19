@@ -4,6 +4,7 @@ if(!dead){
 		dead=true
 		instance_destroy()
 	}
+	audio_play_sound(aEnemyImpact, 1, false)
 	instance_destroy(other)
 	healthLife-=Oplayer.attackValue
 }
